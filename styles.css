@@ -1,0 +1,178 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5FFFA;
+    color: #333;
+}
+
+header {
+    background-color: #2E8B57;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #F5FFFA;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#hero {
+    background-image: url('images/hero.jpg');
+    background-size: contain;
+    padding: 5rem 1rem;
+    text-align: center;
+    color: #F5FFFA;
+}
+
+#hero h1 {
+    font-size: 3rem;
+}
+
+#hero p {
+    font-size: 1.5rem;
+}
+/* 
+#hero a {
+    background-color: #3CB371;
+    color: #F5FFFA;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+} */
+
+#featured-products, #testimonials, #products, #product-detail, #checkout, #contact {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#featured-products h2, #testimonials h2, #products h2, #product-detail h1, #checkout h2, #contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.product {
+    display: inline-block;
+    width: 27%;
+    margin: 1%;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product h3 {
+    margin: 0.5rem 0;
+}
+
+blockquote {
+    background-color: #F5FFFA;
+    padding: 1rem;
+    border-left: 5px solid #2E8B57;
+    margin: 1rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #2E8B57;
+    color: #F5FFFA;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+footer {
+    background-color: #2E8B57;
+    color: #F5FFFA;
+    text-align: center;
+    padding: 1rem;
+}
+
+.carousel img {
+    display: none;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+#animated-button {
+    color: #CCC;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Add these styles to your existing CSS */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+body.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+body.small-font {
+    font-size: 12px;
+}
+
+body.medium-font {
+    font-size: 16px;
+}
+
+body.large-font {
+    font-size: 20px;
+}
+
+.customization{
+    float:right;
+    margin-top: -2.5rem;
+}
+
+.container{
+    width: 60%;
+    
+}

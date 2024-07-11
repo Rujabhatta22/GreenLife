@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenLife - Eco-Friendly Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Add these to your existing HTML -->
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+
+
+            <div class="customization">
+                <button id="theme-toggle">Toggle Dark/Light Mode</button>
+                <select id="font-size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+                <select id="currency-selector">
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <h1 style="color:#f5fffa">Welcome to GreenLife</h1>
+            <p>Your one-stop shop for eco-friendly products.</p>
+                       
+            <a href="shop.html" style="color: #3CB371;" ><button id="animated-button" style="width: 165px;">Shop</button></a>
+        </section>
+        <section id="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product">
+                <a href="product1.html"><img src="./images/product1.jpg" alt="Product 1"></a>
+
+                <h3>Eco-Friendly Reusable Water Bottle</h3>
+                <p class="price" data-price-usd="19.99" data-price-eur="17.99">$19.99</p>
+            </div>
+            <div class="product">
+                <a href="product2.html"><img src="./images/product2.jpg" alt="Product 2"></a>
+                <h3>Bamboo Toothbrush</h3>
+                <p class="price" data-price-usd="15.00" data-price-eur="13.00">$15.00</p>
+            </div>
+            <div class="product">
+                <a href="product3.html"><img src="./images/product3.jpg" alt="Product 3"></a>
+                <h3>Organic Cotton Tote Bag</h3>
+                <p class="price" data-price-usd="35.00" data-price-eur="33.00">$35.00</p>
+            </div>						
+        </section>
+        <section id="testimonials">
+            <h2>What Our Customers Say</h2>
+            <blockquote>
+                "I love GreenLife products! They are high-quality and truly eco-friendly." - Jane Doe
+            </blockquote>
+            <blockquote>
+                "The best place to shop for sustainable products." - John Smith
+            </blockquote>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 GreenLife. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Eco-Friendly Water Bottle</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="cart.html">Cart</a></li>
+
+            </ul>
+            <div class="customization">
+                <button id="theme-toggle">Toggle Dark/Light Mode</button>
+                <select id="font-size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+                <select id="currency-selector">
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-left: 10px;">
+        <h1>Eco-Friendly Water Bottle</h1>
+        <div class="carousel">
+            <img style="width: 250px;height: 300px;" id="product-image" src="images/product1.jpg" alt="Eco-Friendly Water Bottle">
+            <img style="width: 250px;height: 300px;" id="product-image" src="images/product1-2.jpg" alt="Eco-Friendly Water Bottle">
+        </div>
+        <p>Price: $19.99</p>
+        <p>Description: A sustainable water bottle made from eco-friendly materials.</p>
+
+        <label for="product-color">Color:</label>
+        <select id="product-color">
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+
+        <label for="product-size">Size:</label>
+        <select id="product-size">
+            <option value="500ml">500ml</option>
+            <option value="750ml">750ml</option>
+        </select>
+
+        <p class="price" data-price-usd="19.99" data-price-eur="17.99">Total Price: <span id="product-price">$19.99</span></p>
+        <button id="add-to-cart" style="margin-bottom: 10px;">Add to Cart</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GreenLife</p>
+    </footer>
+
+    <script>
+        const colorSelect = document.getElementById('product-color');
+        const sizeSelect = document.getElementById('product-size');
+        const priceDisplay = document.getElementById('product-price');
+        const addToCartButton = document.getElementById('add-to-cart');
+        const image = document.getElementById('product-image');
+
+        colorSelect.addEventListener('change', updatePrice);
+        sizeSelect.addEventListener('change', updatePrice);
+
+        function updatePrice() {
+            const basePrice = 19.99;
+            let finalPrice = basePrice;
+
+            if (colorSelect.value === 'blue') {
+                finalPrice += 1.00;
+            }
+
+            if (sizeSelect.value === '750ml') {
+                finalPrice += 2.00;
+            }
+
+            priceDisplay.textContent = `$${finalPrice.toFixed(2)}`;
+        }
+
+        addToCartButton.addEventListener('click', () => {
+            const product = {
+                name: 'Eco-Friendly Water Bottle',
+                color: colorSelect.value,
+                size: sizeSelect.value,
+                price: priceDisplay.textContent
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'cart.html';
+        });
+    </script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
+

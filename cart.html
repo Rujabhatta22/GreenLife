@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cart</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+
+
+            <div class="customization">
+                <button id="theme-toggle">Toggle Dark/Light Mode</button>
+                <select id="font-size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+                <select id="currency">
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-left: 15px;">
+        <h1>Shopping Cart</h1>
+        <div id="cart-summary">
+            <!-- Cart item details will be displayed here -->
+        </div>
+        <button style="margin-bottom: 30%;" id="proceed-to-checkout">Proceed to Checkout</button>
+    </main>
+
+    <footer >
+        <p>&copy; 2024 GreenLife</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartSummary = document.getElementById('cart-summary');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cart.length === 0) {
+                cartSummary.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('cart-item');
+                    itemDiv.innerHTML = `
+                        <h2>${item.name}</h2>
+                        <p>Color: ${item.color}</p>
+                        <p>Size: ${item.size}</p>
+                        <p>Price: ${item.price}</p>
+                        <button class="remove-item" data-index="${index}">Remove</button>
+                    `;
+                    cartSummary.appendChild(itemDiv);
+                });
+            }
+
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = event.target.getAttribute('data-index');
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    window.location.reload();
+                });
+            });
+
+            document.getElementById('proceed-to-checkout').addEventListener('click', () => {
+                window.location.href = 'checkout.html';
+            });
+        });
+    </script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>

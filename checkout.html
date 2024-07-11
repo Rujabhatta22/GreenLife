@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - GreenLife</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+
+
+            <div class="customization">
+                <button id="theme-toggle">Toggle Dark/Light Mode</button>
+                <select id="font-size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+                <select id="currency">
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="checkout">
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+                
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required>
+                
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" required>
+                
+                <label for="postcode">Postcode</label>
+                <input type="text" id="postcode" name="postcode" required>
+                
+                <label for="cardname">Name on Card</label>
+                <input type="text" id="cardname" name="cardname" required>
+                
+                <label for="cardnumber">Card Number</label>
+                <input type="text" id="cardnumber" name="cardnumber" required>
+                
+                <label for="expmonth">Expiry Month</label>
+                <input type="text" id="expmonth" name="expmonth" required>
+                
+                <label for="expyear">Expiry Year</label>
+                <input type="text" id="expyear" name="expyear" required>
+                
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+                
+                <button type="submit">Complete Purchase</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 GreenLife. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

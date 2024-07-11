@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Product 2 - GreenLife</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="cart.html">Cart</a></li>
+
+            </ul>
+            <div class="customization">
+                <button id="theme-toggle">Toggle Dark/Light Mode</button>
+                <select id="font-size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+                <select id="currency-selector">
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+    <main>
+		<section id="product-detail">
+            <div class="carousel">
+                <img src="images/product5.jpg" alt="Recycled Paper Notebook" style="width: 250px;height: 300px;">
+                <img src="images/product5-2.jpg" alt="Recycled Paper Notebook" style="width: 250px;height: 300px;">
+
+
+            </div>
+				<h2>Recycled Paper Notebook</h2>
+				<p class="description">Take notes sustainably with our recycled paper notebook. Features lined pages and a sturdy cover made from post-consumer materials.</p>
+                <label for="product-color">Color:</label>
+                <select id="product-color">
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
+        
+                <label for="product-size">Size:</label>
+                <select id="product-size">
+                    <option value="500ml">M</option>
+                    <option value="750ml">L</option>
+                </select>
+        
+                <p class="price" data-price-usd="8.00" data-price-eur="6.00">Total Price: <span id="product-price">$8.00</span></p>
+
+                <button id="add-to-cart">Add to Cart</button>
+
+		</section>
+    </main>
+    <footer>
+        <p>&copy; 2024 GreenLife. All rights reserved.</p>
+    </footer>
+    <script>
+        const colorSelect = document.getElementById('product-color');
+        const sizeSelect = document.getElementById('product-size');
+        const priceDisplay = document.getElementById('product-price');
+        const addToCartButton = document.getElementById('add-to-cart');
+        const image = document.getElementById('product-image');
+
+        colorSelect.addEventListener('change', updatePrice);
+        sizeSelect.addEventListener('change', updatePrice);
+
+        function updatePrice() {
+            const basePrice = 8.00;
+            let finalPrice = basePrice;
+
+            if (colorSelect.value === 'blue') {
+                finalPrice += 1.00;
+            }
+
+            if (sizeSelect.value === '750ml') {
+                finalPrice += 2.00;
+            }
+
+            priceDisplay.textContent = `$${finalPrice.toFixed(2)}`;
+        }
+        console.log(image)
+
+        addToCartButton.addEventListener('click', () => {
+            const product = {
+                name: 'Recycled Paper Notebook',
+                image: 'adgasr',
+                color: colorSelect.value,
+                size: sizeSelect.value,
+                price: priceDisplay.textContent
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'cart.html';
+        });
+    </script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
